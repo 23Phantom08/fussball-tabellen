@@ -1,0 +1,295 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe A
+        entities:
+          include: sensor.uefa_champions_league_a
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
+            modify: x.stats[1].value
+          - name: Tor- Verhältniss
+            data: entries
+            modify: |-
+              {
+                x.stats[5].value +
+                    " : " +
+                x.stats[4].value
+              }
+          - name: Diff.
+            data: entries
+            modify: x.stats[2].value
+          - name: Pkt.
+            data: entries
+            modify: x.stats[3].value
+  - type: horizontal-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe B
+        entities:
+          include: sensor.uefa_champions_league_b
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
+            modify: x.stats[1].value
+          - name: Tor- Verhältniss
+            data: entries
+            modify: |-
+              {
+                x.stats[5].value +
+                   " : " +
+                x.stats[4].value
+              }
+          - name: Diff.
+            data: entries
+            modify: x.stats[2].value
+          - name: Pkt.
+            data: entries
+            modify: x.stats[3].value
+  - type: vertical-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe C
+        entities:
+          include: sensor.uefa_champions_league_c
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
+            modify: x.stats[1].value
+          - name: Tor- Verhältniss
+            data: entries
+            modify: |-
+              {
+                x.stats[5].value +
+                   " : " +
+                x.stats[4].value
+              }
+          - name: Diff.
+            data: entries
+            modify: x.stats[2].value
+          - name: Pkt.
+            data: entries
+            modify: x.stats[3].value
+  - type: vertical-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe D
+        entities:
+          include: sensor.uefa_champions_league_d
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
+            modify: x.stats[1].value
+          - name: Tor- Verhältniss
+            data: entries
+            modify: |-
+              {
+                x.stats[5].value +
+                   " : " +
+                x.stats[4].value
+              }
+          - name: Diff.
+            data: entries
+            modify: x.stats[2].value
+          - name: Pkt.
+            data: entries
+            modify: x.stats[3].value
+  - type: vertical-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe E
+        entities:
+          include: sensor.uefa_champions_league_e
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
+            modify: x.stats[1].value
+          - name: Tor- Verhältniss
+            data: entries
+            modify: |-
+              {
+                x.stats[5].value +
+                   " : " +
+                x.stats[4].value
+              }
+          - name: Diff.
+            data: entries
+            modify: x.stats[2].value
+          - name: Pkt.
+            data: entries
+            modify: x.stats[3].value
+  - type: vertical-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe F
+        entities:
+          include: sensor.uefa_champions_league_f
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
+            modify: x.stats[1].value
+          - name: Tor- Verhältniss
+            data: entries
+            modify: |-
+              {
+                x.stats[5].value +
+                   " : " +
+                x.stats[4].value
+              }
+          - name: Diff.
+            data: entries
+            modify: x.stats[2].value
+          - name: Pkt.
+            data: entries
+            modify: x.stats[3].value
+  - type: vertical-stack
+    cards:
+      - type: custom:flex-table-card
+        sort_by: Platz
+        title: Gruppe G
+        entities:
+          include: sensor.uefa_champions_league_g
+          exclude: zwave.unknown_node*
+        columns:
+          - name: Platz
+            data: entries
+            modify: x.stats[10].value
+          - name: Logo
+            data: entries
+            modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
+          - name: Team
+            data: entries
+            modify: x.team.name
+          - name: Sp.
+            data: entries
+            modify: x.stats[0].value
+          - name: S
+            data: entries
+            modify: x.stats[7].value
+          - name: U
+            data: entries
+            modify: x.stats[6].value
+          - name: 'N'
+            data: entries
