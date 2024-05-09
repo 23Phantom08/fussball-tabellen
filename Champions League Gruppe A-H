@@ -1,0 +1,60 @@
+#-------------------------------------------------------------------------------------------#
+#------------------------------Champions League---------------------------------------------#
+#-------------------------------------------------------------------------------------------#
+
+  - platform: rest
+    name: UEFA Champions League A
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][0]['standings']"
+    json_attributes:
+      - entries
+  - platform: rest
+    name: UEFA Champions League B
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][1]['standings']"
+    json_attributes:
+      - entries
+  - platform: rest
+    name: UEFA Champions League C
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][2]['standings']"
+    json_attributes:
+      - entries   
+  - platform: rest
+    name: UEFA Champions League D
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][3]['standings']"
+    json_attributes:
+      - entries   
+  - platform: rest
+    name: UEFA Champions League E
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][4]['standings']"
+    json_attributes:
+      - entries   
+  - platform: rest
+    name: UEFA Champions League F
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][5]['standings']"
+    json_attributes:
+      - entries 
+  - platform: rest
+    name: UEFA Champions League G
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][6]['standings']"
+    json_attributes:
+      - entries 
+  - platform: rest
+    name: UEFA Champions League H
+    resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
+    value_template: "{{ now() }}"
+    json_attributes_path: "$['children'][7]['standings']"
+    json_attributes:
+      - entries 
