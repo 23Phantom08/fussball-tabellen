@@ -1,6 +1,6 @@
 type: custom:flex-table-card
 sort_by: Platz
-title: Gruppe A #kann einen anderen Namen bekommen#
+title: Gruppe A #der name kann geändert werden#
 entities:
   include: sensor.uefa_champions_league_a #kann in die gewünschte Liga geändert werden #
   exclude: zwave.unknown_node*
