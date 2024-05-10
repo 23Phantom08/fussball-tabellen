@@ -15,6 +15,10 @@ Unter Entwicklerwerkzeuge die config prüfen und Home Assistant neu starten.
 
 Um euch die Liga Tabelle zu erstellen braucht ihr noch die flex-table-card,diese könnt ihr von HACS downloaden (wie man HACS installiert findet ihr überall online).
 
-link zur flex-table-card: https://github.com/custom-cards/flex-table-card
+Link zur flex-table-card: https://github.com/custom-cards/flex-table-card
 
 Wenn ihr die flex-table-card habt dann kopiert Ihr euch den Liga Tabellen code und geht auf Karte hinzufügen, wählt manuell aus und kopiert den Liga Tabellen code rein,ändert noch eure gewünschte Liga,den Namen der Liga wenn gewünscht und fertig.
+
+
+Gerne könnt Ihr auch Verbesserungsvorschläge machen oder selber anpassen.
+Viel Spaß mit den Tabellen und wenn es Fragen gibt könnt ich mir gerne schreiben.
