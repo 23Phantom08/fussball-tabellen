@@ -1,6 +1,6 @@
 type: custom:flex-table-card
 sort_by: Platz
-title: Gruppe A #der name kann geändert werden#
+title: Bundesliga #der name kann geändert werden#
 entities:
   include: sensor.bund_scoreboard1 #kann in die gewünschte Liga geändert werden#
   exclude: zwave.unknown_node*
