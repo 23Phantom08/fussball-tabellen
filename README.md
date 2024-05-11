@@ -3,7 +3,20 @@
 Hier entsteht eine Fussball Tabellen Auswahl für Verschiedene Ligen und Meisterschaften.
 Es wird über ESPN abgerufen und ist immer aktuell.
 
+### Die Folgenden Tabellen habe ich hinzugefügt
+   Englische Ligen 1-4
+   
+   Bundesliga 1&2
+   
+   Spanische Liga 1&2
+   
+   Französische Liga 1&2
 
+   Champions League Gruppe A-H
+
+   Europa League Gruppe A-H
+
+   Europameisterschaft Gruppe A-F
 
 
 # Installation
