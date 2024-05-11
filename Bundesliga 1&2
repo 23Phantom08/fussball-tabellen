@@ -6,7 +6,7 @@
     json_attributes:
       - entries
   - platform: rest
-    name: EPL Scoreboard1
+    name: Bund2 Scoreboard1
     resource: https://site.web.api.espn.com/apis/v2/sports/soccer/ger.2/standings
     value_template: "{{ now() }}"
     json_attributes_path: "$['children'][0]['standings']"
