@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------------------#
 
   - platform: rest
-    name: UEFA Champions League A
+    name: UEFA Champions League
     resource: https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings
     value_template: "{{ now() }}"
     json_attributes_path: "$['children'][0]['standings']"
