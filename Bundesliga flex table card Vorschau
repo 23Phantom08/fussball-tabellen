@@ -1,29 +1,37 @@
 type: custom:flex-table-card
-sort_by: Platz
-title: Bundesliga #der name kann geändert werden#
 entities:
-  include: sensor.bund_scoreboard1 #kann in die gewünschte Liga geändert werden#
+  include: sensor.bundesliga_tabelle
   exclude: zwave.unknown_node*
 columns:
   - name: Platz
     data: entries
-    modify: x.stats[10].value
-  - name: Logo
+    modify: |-
+      if (x.stats[10].value >=17 )
+         '<div style="background-color: #cd0000;">' + x.stats[10].value + '</div>';
+      else if (x.stats[10].value >=16 )
+         '<div style="background-color: #ea8109;">' + x.stats[10].value + '</div>';
+      else if (x.stats[10].value >=5 )
+         '<div style="background-color: #202124;">' + x.stats[10].value + '</div>';
+      else if (x.stats[10].value <=4 )
+         '<div style="background-color: #228B22;">' + x.stats[10].value + '</div>';         
+    align: center
+  - name: Mannschaft
     data: entries
-    modify: '''<img src="'' + x.team.logos[0].href + ''"style="width: 15%">'''
-  - name: Team
-    data: entries
-    modify: x.team.name
-  - name: Sp.
+    modify: |-
+      if (typeof x.team.logos !== 'undefined')
+        '<div><img src="' + x.team.logos[0].href + '" style="height:20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
+      else
+        '<div><span style="display: inline-block;width: 20px;"></span>&nbsp;' + x.team.displayName + '</div>'
+  - name: Spiele
     data: entries
     modify: x.stats[0].value
-  - name: S
+  - name: Siege
     data: entries
     modify: x.stats[7].value
-  - name: U
+  - name: Unentschieden
     data: entries
     modify: x.stats[6].value
-  - name: 'N'
+  - name: Niederlagen
     data: entries
     modify: x.stats[1].value
   - name: Tor- Verhältniss
@@ -34,9 +42,40 @@ columns:
             " : " +
         x.stats[4].value
       }
-  - name: Diff.
+  - name: Differenz
     data: entries
     modify: x.stats[2].value
-  - name: Pkt.
+  - name: Punkte
     data: entries
     modify: x.stats[3].value
+strict: false
+css:
+  tbody td:nth-child(0)+: "width: 250px;"
+  tbody tr td:nth-child(9): "background-color: green; color: white;"
+  tbody tr td:nth-child(4): "color: green;"
+  tbody tr td:nth-child(6): "color: red;"
+  table+: "padding: 0px; width: 100%; border-collapse: collapse; margin-top:12px;"
+  tbody tr td:first-child: "width: 1%;"
+  tbody tr td:nth-child(2): "width: 9%;"
+  tbody tr td:nth-child(n+3): "width: 3%;"
+  tbody tr:hover: "background-color: dimgrey!important; color:white!important;"
+  tbody tr:nth-child(4): "border-bottom: 1px solid green!important;"
+  tbody tr:nth-child(5): "border-bottom: 1px solid dodgerblue!important;"
+  tbody tr:nth-child(6): "border-bottom: 1px solid dodgerblue!important;"
+  tbody tr:nth-child(16): "border-bottom: 1px solid crimson!important;"
+  tbody tr:nth-child(15): "border-bottom: 1px solid yellow!important;"
+card_mod:
+  style:
+    .: |
+      ha-card {
+        overflow: auto;
+        }
+    $: |
+      .card-header {
+         padding-top: 6px!important;
+         padding-bottom: 4px!important;
+         font-size: 14px!important;
+         line-height: 14px!important;
+         font-weight: bold!important;
+       }
+       
