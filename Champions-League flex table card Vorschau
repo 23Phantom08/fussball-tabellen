@@ -7,11 +7,11 @@ columns:
     data: entries
     modify: |-
       if (x.stats[10].value >=25 )
-         '<div style="background-color: #cd0000;">' + x.stats[10].value + '</div>';
+         '<div style="background-color: red;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value >=9 )
-         '<div style="background-color: #ea8109;">' + x.stats[10].value + '</div>';
+         '<div style="background-color: orange;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value <=8 )
-         '<div style="background-color: #228B22;">' + x.stats[10].value + '</div>';         
+         '<div style="background-color: green;">' + x.stats[10].value + '</div>';         
     align: center
   - name: Up-Down
     data: entries
