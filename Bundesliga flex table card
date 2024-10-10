@@ -1,19 +1,21 @@
 type: custom:flex-table-card
 entities:
-  include: sensor.bundesliga_tabelle #change this sensor#
+  include: sensor.bundesliga_tabelle
   exclude: zwave.unknown_node*
 columns:
   - name: Platz
     data: entries
     modify: |-
       if (x.stats[10].value >=17 )
-         '<div style="background-color: #cd0000;">' + x.stats[10].value + '</div>';
+         '<div style="background-color: red;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value >=16 )
-         '<div style="background-color: #ea8109;">' + x.stats[10].value + '</div>';
-      else if (x.stats[10].value >=5 )
-         '<div style="background-color: #202124;">' + x.stats[10].value + '</div>';
+         '<div style="background-color: orange;">' + x.stats[10].value + '</div>';
+      else if (x.stats[10].value >=7 )
+         '<div style="background-color: black;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value <=4 )
-         '<div style="background-color: #228B22;">' + x.stats[10].value + '</div>';         
+         '<div style="background-color: green;">' + x.stats[10].value + '</div>';         
+      else if (x.stats[10].value <=6 )
+         '<div style="background-color: blue;">' + x.stats[10].value + '</div>';         
     align: center
   - name: Up-Down
     data: entries
@@ -28,23 +30,23 @@ columns:
         '<div><ha-icon icon="mdi:arrow-down" style="color:red;"></ha-icon>&nbsp;' +  "Dn "+ (x.current - x.previous) + '</div>';
       else if (x.current < x.previous)
         '<div><ha-icon icon="mdi:arrow-up" style="color:green;"></ha-icon>&nbsp;' + "Up "+ (x.previous - x.current) + '</div>';
-  - name: Mannschaft
+  - name: Team
     data: entries
     modify: |-
       if (typeof x.team.logos !== 'undefined')
         '<div><img src="' + x.team.logos[0].href + '" style="height:20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
       else
         '<div><span style="display: inline-block;width: 20px;"></span>&nbsp;' + x.team.displayName + '</div>'
-  - name: Spiele
+  - name: Sp
     data: entries
     modify: x.stats[0].value
-  - name: Siege
+  - name: S
     data: entries
     modify: x.stats[7].value
-  - name: Unentschieden
+  - name: U
     data: entries
     modify: x.stats[6].value
-  - name: Niederlagen
+  - name: "N"
     data: entries
     modify: x.stats[1].value
   - name: Tor- Verhältniss
@@ -58,12 +60,12 @@ columns:
   - name: Differenz
     data: entries
     modify: x.stats[2].value
-  - name: Punkte
+  - name: Pkt.
     data: entries
     modify: x.stats[3].value
 strict: false
 css:
-  tbody td:nth-child(3)+: "width: 250px;"
+  tbody td:nth-child(0)+: "width: 250px;"
   tbody tr td:nth-child(10): "background-color: green; color: white;"
   tbody tr td:nth-child(5): "color: green;"
   tbody tr td:nth-child(6): "color: yellow;"
