@@ -14,9 +14,9 @@ Es wird über ESPN abgerufen und ist immer aktuell.
 
    Serie A
 
-   Champions League Gruppe A-H
+   Champions League
 
-   Europa League Gruppe A-H
+   Europa League
 
    Europameisterschaft Gruppe A-F
 
