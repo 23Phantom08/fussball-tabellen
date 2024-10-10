@@ -13,23 +13,36 @@ columns:
       else if (x.stats[10].value <=8 )
          '<div style="background-color: #228B22;">' + x.stats[10].value + '</div>';         
     align: center
-  - name: Mannschaft
+  - name: Up-Down
+    data: entries
+    modify: |-
+      if (x.current == x.previous)
+        '<ha-icon icon="mdi:minus" >'
+      else if (x.current =="0")
+        '<ha-icon icon="mdi:bomb" style="color:red;" >'
+      else if (x.previous == "0")
+        '<div><ha-icon icon="mdi:hand-clap" style="color:blue;"></ha-icon>&nbsp;' +  "New " + '</div>';
+      else if (x.current > x.previous)
+        '<div><ha-icon icon="mdi:arrow-down" style="color:red;"></ha-icon>&nbsp;' +  "Dn "+ (x.current - x.previous) + '</div>';
+      else if (x.current < x.previous)
+        '<div><ha-icon icon="mdi:arrow-up" style="color:green;"></ha-icon>&nbsp;' + "Up "+ (x.previous - x.current) + '</div>';            
+  - name: Team
     data: entries
     modify: |-
       if (typeof x.team.logos !== 'undefined')
         '<div><img src="' + x.team.logos[0].href + '" style="height:20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
       else
         '<div><span style="display: inline-block;width: 20px;"></span>&nbsp;' + x.team.displayName + '</div>'
-  - name: Spiele
+  - name: Sp
     data: entries
     modify: x.stats[0].value
-  - name: Siege
+  - name: S
     data: entries
     modify: x.stats[7].value
-  - name: Unentschieden
+  - name: U
     data: entries
     modify: x.stats[6].value
-  - name: Niederlagen
+  - name: "N"
     data: entries
     modify: x.stats[1].value
   - name: Tor- Verhältniss
@@ -43,22 +56,24 @@ columns:
   - name: Differenz
     data: entries
     modify: x.stats[2].value
-  - name: Punkte
+  - name: Pkt
     data: entries
     modify: x.stats[3].value
 strict: false
 css:
   tbody td:nth-child(0)+: "width: 250px;"
-  tbody tr td:nth-child(9): "background-color: green; color: white;"
-  tbody tr td:nth-child(4): "color: green;"
-  tbody tr td:nth-child(6): "color: red;"
+  tbody tr td:nth-child(10): "background-color: green; color: white;"
+  tbody tr td:nth-child(5): "color: green;"
+  tbody tr td:nth-child(6): "color: yellow;"
+  tbody tr td:nth-child(7): "color: red;"
   table+: "padding: 0px; width: 100%; border-collapse: collapse; margin-top:12px;"
   tbody tr td:first-child: "width: 1%;"
-  tbody tr td:nth-child(2): "width: 9%;"
-  tbody tr td:nth-child(n+3): "width: 3%;"
+  tbody tr td:nth-child(2): "width: 1%;"
+  tbody tr td:nth-child(3): "width: 20%;"
+  tbody tr td:nth-child(n+4): "width: 1%;"
   tbody tr:hover: "background-color: dimgrey!important; color:white!important;"
-  tbody tr:nth-child(8): "border-bottom: 1px solid green!important;"
-  tbody tr:nth-child(24): "border-bottom: 1px solid crimson!important;"
+  tbody tr:nth-child(8): "border-bottom: 2px solid green!important;"
+  tbody tr:nth-child(24): "border-bottom: 2px solid crimson!important;"
 card_mod:
   style:
     .: |
