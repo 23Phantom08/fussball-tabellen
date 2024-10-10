@@ -1,6 +1,6 @@
 type: custom:flex-table-card
 entities:
-  include: sensor.uefa_champions_league_a
+  include: sensor.uefa_champions_league
   exclude: zwave.unknown_node*
 columns:
   - name: Platz
