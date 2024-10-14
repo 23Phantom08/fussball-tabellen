@@ -6,7 +6,6 @@ columns:
   - name: Platz
     data: entries
     modify: |-
-      x.current
       if (x.stats[10].value >=17 )
          '<div style="background-color: red;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value >=16 )
