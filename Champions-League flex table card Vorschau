@@ -6,6 +6,7 @@ columns:
   - name: Platz
     data: entries
     modify: |-
+      x.current
       if (x.stats[10].value >=25 )
          '<div style="background-color: red;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value >=9 )
@@ -13,19 +14,6 @@ columns:
       else if (x.stats[10].value <=8 )
          '<div style="background-color: green;">' + x.stats[10].value + '</div>';         
     align: center
-  - name: Up-Down
-    data: entries
-    modify: |-
-      if (x.current == x.previous)
-        '<ha-icon icon="mdi:minus" >'
-      else if (x.current =="0")
-        '<ha-icon icon="mdi:bomb" style="color:red;" >'
-      else if (x.previous == "0")
-        '<div><ha-icon icon="mdi:hand-clap" style="color:blue;"></ha-icon>&nbsp;' +  "New " + '</div>';
-      else if (x.current > x.previous)
-        '<div><ha-icon icon="mdi:arrow-down" style="color:red;"></ha-icon>&nbsp;' +  "Dn "+ (x.current - x.previous) + '</div>';
-      else if (x.current < x.previous)
-        '<div><ha-icon icon="mdi:arrow-up" style="color:green;"></ha-icon>&nbsp;' + "Up "+ (x.previous - x.current) + '</div>';            
   - name: Team
     data: entries
     modify: |-
@@ -36,15 +24,19 @@ columns:
   - name: Sp
     data: entries
     modify: x.stats[0].value
+    align: center
   - name: S
     data: entries
     modify: x.stats[7].value
+    align: center
   - name: U
     data: entries
     modify: x.stats[6].value
+    align: center
   - name: "N"
     data: entries
     modify: x.stats[1].value
+    align: center
   - name: Tor- Verhältniss
     data: entries
     modify: |-
@@ -53,19 +45,22 @@ columns:
             " : " +
         x.stats[4].value
       }
+    align: center
   - name: Differenz
     data: entries
     modify: x.stats[2].value
+    align: center
   - name: Pkt
     data: entries
     modify: x.stats[3].value
+    align: center
 strict: false
 css:
   tbody td:nth-child(0)+: "width: 250px;"
-  tbody tr td:nth-child(10): "background-color: green; color: white;"
-  tbody tr td:nth-child(5): "color: green;"
-  tbody tr td:nth-child(6): "color: yellow;"
-  tbody tr td:nth-child(7): "color: red;"
+  tbody tr td:nth-child(9): "background-color: green; color: white;"
+  tbody tr td:nth-child(4): "color: green;"
+  tbody tr td:nth-child(5): "color: yellow;"
+  tbody tr td:nth-child(6): "color: red;"
   table+: "padding: 0px; width: 100%; border-collapse: collapse; margin-top:12px;"
   tbody tr td:first-child: "width: 1%;"
   tbody tr td:nth-child(2): "width: 1%;"
@@ -88,4 +83,3 @@ card_mod:
          line-height: 14px!important;
          font-weight: bold!important;
        }
-       
