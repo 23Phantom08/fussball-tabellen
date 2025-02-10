@@ -6,6 +6,7 @@ columns:
   - name: Platz
     data: entries
     modify: |-
+      x.current
       if (x.stats[10].value >=17 )
          '<div style="background-color: red;">' + x.stats[10].value + '</div>';
       else if (x.stats[10].value >=16 )
@@ -51,7 +52,9 @@ columns:
     align: center
   - name: Differenz
     data: entries
-    modify: x.stats[2].value
+    modify: >-
+      (x.stats[2].value < 0) ? '<span style="color: red">' + x.stats[2].value +
+      '</span>' : '<span style="color: green">' + x.stats[2].value + '</span>'
     align: center
   - name: Pkt.
     data: entries
@@ -65,10 +68,9 @@ css:
   tbody tr td:nth-child(5): "color: yellow;"
   tbody tr td:nth-child(6): "color: red;"
   table+: "padding: 0px; width: 100%; border-collapse: collapse; margin-top:12px;"
-  tbody tr td:first-child: "width: 1%;"
-  tbody tr td:nth-child(2): "width: 1%;"
-  tbody tr td:nth-child(3): "width: 20%;"
-  tbody tr td:nth-child(n+4): "width: 1%;"
+  tbody tr td:first-child: "width: 3%;"
+  tbody tr td:nth-child(2): "width: 25%;"
+  tbody tr td:nth-child(n+3): "width: 3%;"
   tbody tr:hover: "background-color: dimgrey!important; color:white!important;"
   tbody tr:nth-child(4): "border-bottom: 2px solid green!important;"
   tbody tr:nth-child(5): "border-bottom: 2px solid dodgerblue!important;"
@@ -88,4 +90,4 @@ card_mod:
          font-size: 20px!important;
          line-height: 14px!important;
          font-weight: bold!important;
-       }
+       }                 
